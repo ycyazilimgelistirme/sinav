@@ -752,8 +752,14 @@ namespace WinFormsApp1 // DİKKAT: Burayı kendi proje adınla değiştir!
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
     }
-}
 }</code></pre>
+                    </div>
+                    <!-- İndirme Butonu -->
+                    <div class="pt-4 border-t border-gray-200">
+                        <a href="uygulama1.rar" download class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-blue-700 hover:bg-blue-600 rounded-lg shadow-md transition duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            Uygulama 1 Projesini İndir (.rar)
+                        </a>
                     </div>
                 </div>
             </details>
@@ -1051,6 +1057,13 @@ namespace WinFormsApp1
     }
 }</code></pre>
                     </div>
+                    <!-- İndirme Butonu -->
+                    <div class="pt-4 border-t border-gray-200">
+                        <a href="uygulama2.rar" download class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-green-700 hover:bg-green-600 rounded-lg shadow-md transition duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            Uygulama 2 Projesini İndir (.rar)
+                        </a>
+                    </div>
                 </div>
             </details>
         </div>
@@ -1081,12 +1094,14 @@ namespace WinFormsApp1
             textarea.select();
             
             try {
+                // Kopyalama işlemini başlat
                 document.execCommand('copy');
                 
                 // Başarılı olduğunda buton güncellemesi
                 const btn = document.querySelector(`button[onclick="copyCode('${elementId}')"]`);
                 const originalText = btn.innerHTML;
                 
+                // Başarılı kopyalama animasyonu
                 btn.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Kopyalandı!`;
                 
                 // Renk sınıflarını temizle ve gri yap
@@ -1106,7 +1121,8 @@ namespace WinFormsApp1
 
             } catch (err) {
                 console.error('Kopyalama hatası:', err);
-                alert('Kopyalama başarısız oldu. Lütfen manuel seçip kopyalayın.');
+                // Kullanıcıya kopyalama hatasını bildir
+                // Not: alert() yerine daha kibar bir mesaj kutusu kullanılabilir, ancak bu basit örnek için console.error yeterli.
             }
 
             // Temizlik
